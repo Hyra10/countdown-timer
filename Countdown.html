@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Countdown timer</title>
+    <link
+      href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link rel="stylesheet" type="text/css" href="css/timer.css" />
+  </head>
+
+  <body class="roboto-regular purple-background">
+    <section class="wrap">
+      <span class="timer-text"
+        ><a id="text-change" href="">50% off dresses, tops & shoes! ends in</a></span
+      >
+
+      <!--Timer HTML.-->
+      <div id="timer" class="timer">
+        <span id="days">
+          <span class="digit"><div>0</div></span>
+          <span class="digit"><div>0</div></span>
+        </span>
+        <sub>D</sub>
+        <span class="separator">:</span>
+        <span id="hours">
+          <span class="digit"><div>0</div></span>
+          <span class="digit"><div>0</div></span>
+        </span>
+        <sub>H</sub>
+        <span class="separator">:</span>
+        <span id="minutes">
+          <span class="digit"><div>0</div></span>
+          <span class="digit"><div>0</div></span>
+        </span>
+        <sub>M</sub>
+        <span class="separator">:</span>
+        <span id="seconds">
+          <span class="digit"><div>0</div></span>
+          <span class="digit"><div id="sec-unit">0</div></span>
+        </span>
+        <sub>S</sub>
+      </div>
+
+      <!--UI Controls HTML.-->
+      <div class="controls">
+        <div>
+          <div class="label">
+            <span>Year:</span>
+          </div>
+          <select id="year-list" class="form-control"></select>
+        </div>
+        <div>
+          <div class="label">
+            <span>Month:</span>
+          </div>
+          <select id="month-list" class="form-control">
+            <option value="00" selected>January</option>
+            <option value="01">February</option>
+            <option value="02">March</option>
+            <option value="03">April</option>
+            <option value="04">May</option>
+            <option value="05">June</option>
+            <option value="06">July</option>
+            <option value="07">August</option>
+            <option value="08">September</option>
+            <option value="09">October</option>
+            <option value="10">November</option>
+            <option value="11">December</option>
+          </select>
+        </div>
+        <div>
+          <div class="label">
+            <span>Day:</span>
+          </div>
+          <select id="day-list" class="form-control">
+            <option value="1" selected>1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+            <option value="13">13</option>
+            <option value="14">14</option>
+            <option value="15">15</option>
+            <option value="16">16</option>
+            <option value="17">17</option>
+            <option value="18">18</option>
+            <option value="19">19</option>
+            <option value="20">20</option>
+            <option value="21">21</option>
+            <option value="22">22</option>
+            <option value="23">23</option>
+            <option value="24">24</option>
+            <option value="25">25</option>
+            <option value="26">26</option>
+            <option value="27">27</option>
+            <option value="28">28</option>
+            <option value="29">29</option>
+            <option value="30">30</option>
+            <option value="31">31</option>
+          </select>
+        </div>
+        <div>
+          <div class="label">
+            <span>Time:</span>
+          </div>
+          <select id="hour-list" class="form-control">
+            <option value="00:00" selected>12:00 AM</option>
+            <option id="customOption" value=""></option>
+            <option value="01:00">1:00 AM</option>
+            <option value="02:00">2:00 AM</option>
+            <option value="03:00">3:00 AM</option>
+            <option value="04:00">4:00 AM</option>
+            <option value="05:00">5:00 AM</option>
+            <option value="06:00">6:00 AM</option>
+            <option value="07:00">7:00 AM</option>
+            <option value="08:00">8:00 AM</option>
+            <option value="09:00">9:00 AM</option>
+            <option value="10:00">10:00 AM</option>
+            <option value="11:00">11:00 AM</option>
+            <option value="12:00">12:00 PM</option>
+            <option value="13:00">1:00 PM</option>
+            <option value="14:00">2:00 PM</option>
+            <option value="15:00">3:00 PM</option>
+            <option value="16:00">4:00 PM</option>
+            <option value="17:00">5:00 PM</option>
+            <option value="18:00">6:00 PM</option>
+            <option value="19:00">7:00 PM</option>
+            <option value="20:00">8:00 PM</option>
+            <option value="21:00">9:00 PM</option>
+            <option value="22:00">10:00 PM</option>
+            <option value="23:00">11:00 PM</option>
+          </select>
+        </div>
+        <div>
+          <div class="label">
+            <span>Timezone:</span>
+          </div>
+          <select id="timezone-list" class="form-control">
+            <option value="-5" selected>EST</option>
+            <option value="-6">CST</option>
+            <option value="-7">MST</option>
+            <option value="-8">PST</option>
+          </select>
+        </div>
+        <div>
+          <div class="label">
+            <span>Font Family:</span>
+          </div>
+          <select id="font-family-list" class="form-control">
+            <option value="Roboto" selected>Roboto</option>
+            <option value="Default">Default</option>
+          </select>
+        </div>
+        <div>
+          <div class="label">
+            <span>Background Color:</span>
+          </div>
+          <input id="background-color" type="text" class="form-control" value="#4b2d87" />
+        </div>
+        <div>
+          <div class="label">
+            <span>Main Text:</span>
+          </div>
+          <input
+            id="main-text"
+            type="text"
+            class="form-control"
+            value="50% OFF DRESSES, TOPS & SHOES! ENDS IN"
+          />
+        </div>
+        <div>
+          <div class="label">
+            <span>Text Color:</span>
+          </div>
+          <input id="text-color" type="text" class="form-control" value="#fff" />
+        </div>
+        <div>
+          <div class="label">
+            <span>Text Link:</span>
+          </div>
+          <input id="text-link" type="text" class="form-control" value="http://" />
+        </div>
+        <br />
+        <div>
+          <button id="ClockButtonStart" class="btn btn-outline btn-lg">Start clock</button>
+        </div>
+      </div>
+    </section>
+
+    <script src="scripts/observer.js"></script>
+    <script src="scripts/timeUtil.js"></script>
+    <script src="scripts/timerview.js"></script>
+    <script src="scripts/timer.js"></script>
+    <script src="scripts/main.js"></script>
+  </body>
+</html>
